@@ -34,7 +34,7 @@ async def get_temperatures(
 
 
 @temperature_router.get(
-    "/temperatures/{city_id}/",
+    "/temperatures/",
     response_model=list[TemperatureInCityReadSchema],
     status_code=status.HTTP_200_OK
 )
