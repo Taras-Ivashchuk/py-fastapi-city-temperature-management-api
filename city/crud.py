@@ -55,7 +55,7 @@ async def delete_city_by_id(
         db_city = await db.scalar(select(City).where(City.id == city_id))
         if not db_city:
             raise HTTPException(status_code=404, detail="City not found")
-        await db.execute(delete(db_city))
+        await db.delete(db_city)
         await db.commit()
         cities = await db.scalars(select(City))
         return list(cities.all())
