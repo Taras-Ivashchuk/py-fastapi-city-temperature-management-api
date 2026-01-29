@@ -34,7 +34,7 @@ async def update_all_temperatures(db: AsyncSession) -> list[Temperature]:
 
         new_temperatures = []
         for city in cities:
-            temperature = get_temperature(city.name)
+            temperature = await get_temperature(city.name)
             db_temp = Temperature(
                 temperature=temperature,
                 city_id=city.id
