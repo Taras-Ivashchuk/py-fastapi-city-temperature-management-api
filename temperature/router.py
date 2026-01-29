@@ -46,7 +46,7 @@ async def get_temperatures_for_city(
 
 
 @temperature_router.post(
-    "/temperatures/",
+    "/temperatures/update/",
     response_model=list[TemperatureReadSchema],
     status_code=status.HTTP_201_CREATED
 )
